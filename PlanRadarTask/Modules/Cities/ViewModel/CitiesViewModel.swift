@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol CitiesViewModelDelegate {}
+protocol citiesViewModelDelegate {}
 
-class CitiesViewModel:CitiesViewModelDelegate {
+class CitiesViewModel: citiesViewModelDelegate {
     
 }
