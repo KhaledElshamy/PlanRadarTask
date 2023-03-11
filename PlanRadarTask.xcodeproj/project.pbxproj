@@ -39,6 +39,8 @@
 		0504867429BC088F00B97271 /* CitiesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867329BC088F00B97271 /* CitiesNetworkManager.swift */; };
 		0504867629BC77A200B97271 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867529BC77A200B97271 /* CityModel.swift */; };
 		0504867829BC7EA500B97271 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867729BC7EA500B97271 /* ConfigurationManager.swift */; };
+		0504867A29BC9E1900B97271 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867929BC9E1900B97271 /* CityDetailsViewController.swift */; };
+		0504867C29BC9E3E00B97271 /* CityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867B29BC9E3E00B97271 /* CityDetailsView.swift */; };
 		A87160151B4908059582544E /* Pods_PlanRadarTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */; };
 		ED6AF8C394F092584B5C322E /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */; };
 		F7AA6009C8091902E2CE60F6 /* Pods_PlanRadarTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */; };
@@ -101,6 +103,8 @@
 		0504867329BC088F00B97271 /* CitiesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesNetworkManager.swift; sourceTree = "<group>"; };
 		0504867529BC77A200B97271 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		0504867729BC7EA500B97271 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
+		0504867929BC9E1900B97271 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
+		0504867B29BC9E3E00B97271 /* CityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsView.swift; sourceTree = "<group>"; };
 		53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.release.xcconfig"; sourceTree = "<group>"; };
 		7BE3599C3CB13CFF40F1F90E /* Pods-PlanRadarTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,11 +168,11 @@
 		0504860029BB5E9500B97271 /* PlanRadarTask */ = {
 			isa = PBXGroup;
 			children = (
+				0504863A29BB606F00B97271 /* Utilites */,
+				0504863629BB5FC800B97271 /* Component */,
 				0504866729BBE37600B97271 /* Storage */,
 				0504865829BBD7B400B97271 /* DataModel */,
 				0504864F29BB815200B97271 /* NetworkLayer */,
-				0504863629BB5FC800B97271 /* Component */,
-				0504863A29BB606F00B97271 /* Utilites */,
 				0504863929BB605400B97271 /* Modules */,
 				0504860129BB5E9500B97271 /* AppDelegate.swift */,
 				0504860529BB5E9500B97271 /* ViewController.swift */,
@@ -240,6 +244,8 @@
 		0504863E29BB61AA00B97271 /* CityDetails */ = {
 			isa = PBXGroup;
 			children = (
+				0504867929BC9E1900B97271 /* CityDetailsViewController.swift */,
+				0504867B29BC9E3E00B97271 /* CityDetailsView.swift */,
 			);
 			path = CityDetails;
 			sourceTree = "<group>";
@@ -621,8 +627,10 @@
 				0504865129BB82F800B97271 /* EndPointType.swift in Sources */,
 				0504865529BB84DE00B97271 /* HTTPMethod.swift in Sources */,
 				0504865329BB833800B97271 /* URLs.swift in Sources */,
+				0504867A29BC9E1900B97271 /* CityDetailsViewController.swift in Sources */,
 				0504863829BB5FD600B97271 /* BaseVC.swift in Sources */,
 				0504867229BBFDFB00B97271 /* CityWeatherModel.swift in Sources */,
+				0504867C29BC9E3E00B97271 /* CityDetailsView.swift in Sources */,
 				0504865F29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld in Sources */,
 				0504866529BBDB5800B97271 /* CitiesTableViewCell.swift in Sources */,
 				0504867429BC088F00B97271 /* CitiesNetworkManager.swift in Sources */,

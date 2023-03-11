@@ -96,9 +96,15 @@ extension CitiesListViewController: UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == .delete else { return }
+        viewModel?.deleteCity(at: indexPath.row)
+    }
 }
 
 extension CitiesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CityDetailsViewController()
+        self.present(vc, animated: true)
+    }
 }

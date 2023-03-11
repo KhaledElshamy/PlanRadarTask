@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 protocol loadingDelegate {
     func showLoading()
@@ -44,10 +44,10 @@ class BaseVC <T : UIView > : UIViewController  {
 
 extension BaseVC: loadingDelegate {
     func showLoading() {
-        
+        SVProgressHUD.show()
     }
     
     func hideLoading() {
-        
+        SVProgressHUD.dismiss()
     }
 }

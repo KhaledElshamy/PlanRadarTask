@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 // MARK: - DailyTreasuryModel
-struct CityWeatherResponse: Mappable  {
+struct CityWeatherResponse: Mappable {
     
     // MARK: - Properties
     

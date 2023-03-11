@@ -11,6 +11,7 @@ import Combine
 protocol CitiesViewModelDelegate {
     func fetchCityWeatherDetails()
     func setCityName(to name:String)
+    func deleteCity(at index:Int)
 }
 
 class CitiesViewModel {
@@ -64,5 +65,10 @@ extension CitiesViewModel:CitiesViewModelDelegate {
                     windSpeed: "\(model.wind?.speed ?? 0)",
                     temperature: "\(model.main?.temprature ?? 0.0)",
                     imageURL: imageURL)
+    }
+    
+    func deleteCity(at index: Int) {
+        cityWeatherLocalStorage?.deleteCity(with: index)
+        self.dataSource.remove(at: index)
     }
 }
