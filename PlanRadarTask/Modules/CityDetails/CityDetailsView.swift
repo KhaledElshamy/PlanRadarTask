@@ -26,6 +26,7 @@ class CityDetailsView: UIView {
     
     let cancelBackgroundImage: UIView = {
         let backGroundImageView = UIView()
+        backGroundImageView.isUserInteractionEnabled = true 
         backGroundImageView.backgroundColor = .systemBlue
         backGroundImageView.clipsToBounds = true
         backGroundImageView.layer.cornerRadius = 30
@@ -42,7 +43,9 @@ class CityDetailsView: UIView {
     
     let titleLabel:UILabel = {
         let title = UILabel()
-        title.text = "London"
+        title.textColor = .black
+        title.numberOfLines = 0
+        title.textAlignment = .center
         return title
     }()
     
@@ -106,6 +109,13 @@ class CityDetailsView: UIView {
         return label
     }()
     
+    let bottomDescription:UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.numberOfLines = 0
+        return label
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -126,13 +136,16 @@ class CityDetailsView: UIView {
                            paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8)
         
         addSubview(titleLabel)
-        titleLabel.anchor(centerX:centerXAnchor, centerY: cancelBackgroundImage.centerYAnchor)
+        titleLabel.anchor(centerX:centerXAnchor, centerY: cancelBackgroundImage.centerYAnchor, width: 100)
 //
         addSubview(scrollView)
         scrollView.anchor(top:cancelBackgroundImage.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
 
         containerScrollView.addSubview(detailsStackView)
-        detailsStackView.anchor(top:cancelBackgroundImage.bottomAnchor,leading: containerScrollView.leadingAnchor,bottom: containerScrollView.bottomAnchor,trailing: containerScrollView.trailingAnchor, paddingTop: 64,paddingLeft: 64, paddingRight: 64)
+        detailsStackView.anchor(top:cancelBackgroundImage.bottomAnchor,leading: containerScrollView.leadingAnchor,trailing: containerScrollView.trailingAnchor, paddingTop: 64,paddingLeft: 64, paddingRight: 64)
+        
+        containerScrollView.addSubview(bottomDescription)
+        bottomDescription.anchor(top:detailsStackView.bottomAnchor, leading: containerScrollView.leadingAnchor, bottom: containerScrollView.bottomAnchor, trailing: containerScrollView.trailingAnchor, paddingTop: 32, paddingLeft: 32, paddingBottom: 8, paddingRight: 32)
         
         weatherImage.anchor(top: detailsStackView.topAnchor,centerX:detailsStackView.centerXAnchor, paddingTop: 16)
     }

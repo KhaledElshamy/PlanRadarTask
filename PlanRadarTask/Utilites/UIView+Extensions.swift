@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import PINRemoteImage
 
 extension UIView {
     func anchor(top: NSLayoutYAxisAnchor? = nil , leading: NSLayoutXAxisAnchor? = nil , bottom: NSLayoutYAxisAnchor? = nil , trailing: NSLayoutXAxisAnchor? = nil , centerX:NSLayoutXAxisAnchor? = nil ,centerY: NSLayoutYAxisAnchor? = nil ,paddingTop: CGFloat = 0 ,paddingLeft: CGFloat = 0 ,paddingBottom: CGFloat = 0 ,paddingRight: CGFloat = 0 , width: CGFloat = 0 ,height: CGFloat = 0 ,paddingCenterX: CGFloat = 0 ,paddingCenterY: CGFloat = 0) {
@@ -81,5 +82,19 @@ extension UITableView {
             fatalError("Could not dequeue cell with identifier: \(Cell.defaultReuseIdentifier)")
         }
         return cell
+    }
+}
+
+
+extension UIImageView {
+    func loadImage (url : String , placeHolder : UIImage = #imageLiteral(resourceName: "place-holder-gallary-error") ) {
+        
+    self.pin_updateWithProgress = true
+        self.pin_setImage(from: URL(string: url ) , placeholderImage: placeHolder )
+    }
+    
+    func loadProfileImage (url : String , placeHolder : UIImage = #imageLiteral(resourceName: "MicrosoftTeams-image") ) {
+    self.pin_updateWithProgress = true
+        self.pin_setImage(from: URL(string: url ) , placeholderImage: placeHolder )
     }
 }

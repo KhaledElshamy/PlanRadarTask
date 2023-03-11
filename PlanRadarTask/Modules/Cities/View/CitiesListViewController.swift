@@ -104,7 +104,9 @@ extension CitiesListViewController: UITableViewDataSource {
 
 extension CitiesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CityDetailsViewController()
+        let weatherInfo = viewModel?.getWeatherInfo(at: indexPath.item)
+        guard let info = weatherInfo else {return}
+        let vc = CityDetailsViewController(model: info)
         self.present(vc, animated: true)
     }
 }

@@ -12,6 +12,7 @@ protocol CitiesViewModelDelegate {
     func fetchCityWeatherDetails()
     func setCityName(to name:String)
     func deleteCity(at index:Int)
+    func getWeatherInfo(at index: Int) -> City
 }
 
 class CitiesViewModel {
@@ -70,5 +71,9 @@ extension CitiesViewModel:CitiesViewModelDelegate {
     func deleteCity(at index: Int) {
         cityWeatherLocalStorage?.deleteCity(with: index)
         self.dataSource.remove(at: index)
+    }
+    
+    func getWeatherInfo(at index: Int) -> City {
+        return (cityWeatherLocalStorage?.getCityDetails(at: index).first)!
     }
 }

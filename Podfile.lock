@@ -15,24 +15,46 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - ObjectMapper (4.2.0)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.2)
+  - PINRemoteImage (3.0.3):
+    - PINRemoteImage/PINCache (= 3.0.3)
+  - PINRemoteImage/Core (3.0.3):
+    - PINOperation
+  - PINRemoteImage/PINCache (3.0.3):
+    - PINCache (~> 3.0.3)
+    - PINRemoteImage/Core
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AFNetworking
   - ObjectMapper
+  - PINRemoteImage
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - ObjectMapper
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
     - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: daa34d4aa1d8449089be7d405b9d974abc4724c6
+  PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: f32d98d097d0721231666643a5080dfafc262cae
+PODFILE CHECKSUM: 5fab2e991c36104065449a87e8f6c3eb8dfad2bb
 
 COCOAPODS: 1.11.3
