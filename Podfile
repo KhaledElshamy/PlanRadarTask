@@ -8,6 +8,7 @@ target 'PlanRadarTask' do
   # Pods for PlanRadarTask
   pod 'SVProgressHUD'
   pod 'AFNetworking'
+  pod 'ObjectMapper'
   target 'PlanRadarTaskTests' do
     inherit! :search_paths
     # Pods for testing

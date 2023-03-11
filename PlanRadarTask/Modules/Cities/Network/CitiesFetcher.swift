@@ -6,20 +6,21 @@
 //
 
 import Foundation
+import ObjectMapper
 
-enum ResultApi<T:Decodable> {
+enum ResultApi<T:Mappable> {
     case success(T)
     case error(Error)
 }
 
 protocol CityWeatherFetcherDelegate {
-    func fetchCityWeather(with city:String, completionHandler:@escaping ( ResultApi<DailyTreasuryModel>)->Void)
+    func fetchCityWeather(with city:String, completionHandler:@escaping ( ResultApi<CityWeatherResponse>)->Void)
 }
 
 
 class CityWeatherFetcher: CityWeatherFetcherDelegate {
     
-    func fetchCityWeather(with city: String, completionHandler: @escaping (ResultApi<DailyTreasuryModel>) -> Void) {
+    func fetchCityWeather(with city: String, completionHandler: @escaping (ResultApi<CityWeatherResponse>) -> Void) {
         
         let apiClient = APIClient.sharedInstance() as! APIClient
         let networkManager = CityWeatherNetworkManager()
@@ -31,22 +32,12 @@ class CityWeatherFetcher: CityWeatherFetcherDelegate {
                               parameters: networkManager.cityWeatherEndPoint?.bodyParams,
                               httpHeaders: networkManager.cityWeatherEndPoint?.headers,
                               httpMethod: networkManager.cityWeatherEndPoint?.httpMethod?.rawValue ?? "") { result, error in
+            
             if error != nil {
                 completionHandler(.error(error!))
             }else {
-                let decoder: JSONDecoder = JSONDecoder()
-                
-                do{
-//                    guard let json = try JSONSerialization.jsonObject(with: result ,options: []) as? [String: Any] else {
-//                        return
-//                    }
-//
-//                    let responseModel = try decoder.decode(DailyTreasuryModel.self, from: result as! [String:Any])
-//                    
-//                    completionHandler(.success(responseModel))
-                }catch(let error){
-                    completionHandler(.error(error))
-                }
+                let cityWeatherResponse = CityWeatherResponse(JSON: result as! [String: Any])
+                completionHandler(.success(cityWeatherResponse!))
             }
         }
     }

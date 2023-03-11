@@ -28,7 +28,7 @@ class CitiesViewModel {
     }
     
     private func LoadCitiesFromLocalStorage(){
-        dataSource = cityWeatherLocalStorage?.fetchCitiesNames() ?? []
+        dataSource = cityWeatherLocalStorage?.getCitiesNames() ?? []
     }
 }
 
@@ -42,14 +42,27 @@ extension CitiesViewModel:CitiesViewModelDelegate {
     func fetchCityWeatherDetails() {
         guard let name = cityName else {return}
         cityWeatherFetcher?.fetchCityWeather(with: name,
-                                        completionHandler: { result in
+                                        completionHandler: { [weak self] result in
             switch result {
             case .success(let model):
+                let city = self?.getCityModel(model: model)
+                self?.cityWeatherLocalStorage?.addWeather(for: city!)
+                self?.dataSource = self?.cityWeatherLocalStorage?.getCitiesNames() ?? []
                 break
             case .error(let error):
                 break
             }
         })
-//        self.dataSource.append(name)
+    }
+    
+    private func getCityModel(model:CityWeatherResponse) -> City {
+        let baseURL = ConfigurationManager.baseURL
+        let imageURL = baseURL + (URLs.Path.weatherIcon(iconId: model.weather?.first?.icon ?? "").absolutePath)
+        return City(name: self.cityName ?? "",
+                    description: model.weather?.first?.description ?? "",
+                    humidity: "\(model.main?.humidity ?? 0)",
+                    windSpeed: "\(model.wind?.speed ?? 0)",
+                    temperature: "\(model.main?.temprature ?? 0.0)",
+                    imageURL: imageURL)
     }
 }

@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "740B189E-5A6C-4D32-9D66-44D1FF4A359B"
-            shouldBeEnabled = "Yes"
+            uuid = "70369D26-CEBE-4EFC-B290-9B57E2A6D56D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlanRadarTask/Modules/Cities/Network/CitiesFetcher.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "fetchCityWeather(with:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70369D26-CEBE-4EFC-B290-9B57E2A6D56D"
-            shouldBeEnabled = "Yes"
+            uuid = "6E47B3E1-C65D-45FE-8437-9E6C9BB21E32"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PlanRadarTask/Modules/Cities/Network/CitiesFetcher.swift"
+            filePath = "PlanRadarTask/Modules/Cities/ViewModel/CitiesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "fetchCityWeather(with:completionHandler:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fetchCityWeatherDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

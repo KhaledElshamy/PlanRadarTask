@@ -8,7 +8,7 @@
 import Foundation
 
 struct CityWeatherEndPoint: EndPointType {
-    typealias ResponseModel = DailyTreasuryModel
+    typealias ResponseModel = CityWeatherResponse
     
     var path: URLs.Path
     

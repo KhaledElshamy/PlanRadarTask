@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import ObjectMapper
 
 public typealias HTTPHeaders = [String:Any]
 public typealias Parameters = [String:Any]
 
 protocol EndPointType {
-    associatedtype ResponseModel: Codable
+    associatedtype ResponseModel: Mappable
     var baseURL: String? { get }
     var path: URLs.Path { get }
     var httpMethod: HTTPMethod? { get }
@@ -21,6 +22,6 @@ protocol EndPointType {
 
 extension EndPointType {
     var baseURL: String? {
-        return "https://api.openweathermap.org"
+        return ConfigurationManager.baseURL
     }
 }
