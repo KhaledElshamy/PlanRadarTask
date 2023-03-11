@@ -12,7 +12,7 @@ class CitiesListViewController:BaseVC<CitiesView> {
     
     var viewModel:CitiesViewModelDelegate?
     
-    private var cities: [String] = []
+    var cities: [String] = []
     private var disposables = Set<AnyCancellable>()
     
     override func viewDidLoad() {
@@ -31,14 +31,12 @@ class CitiesListViewController:BaseVC<CitiesView> {
     }
     
     private func subscribeOnCitiesEvent(){
-        if let viewModel = self.viewModel as? CitiesViewModel {
-            viewModel.$dataSource
-                .sink(receiveValue: { [weak self] cities in
-                    self?.hideLoading()
-                    self?.cities = cities
-                    self?.mainView.tableView.reloadData()
-                }).store(in: &self.disposables)
-        }
+        viewModel?.namePublisher
+            .sink(receiveValue: { [weak self] cities in
+                self?.hideLoading()
+                self?.cities = cities
+                self?.mainView.tableView.reloadData()
+            }).store(in: &self.disposables)
     }
     
     private func setNavigationBarTitleAndColor(){

@@ -1,14 +1,13 @@
 //
-//  PlanRadarTaskTests.swift
+//  CitiesViewModelMock.swift
 //  PlanRadarTaskTests
 //
-//  Created by Khaled Elshamy on 10/03/2023.
+//  Created by Khaled Elshamy on 11/03/2023.
 //
 
 import XCTest
-@testable import PlanRadarTask
 
-final class PlanRadarTaskTests: XCTestCase {
+final class CitiesViewModelMock: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -34,3 +33,4 @@ final class PlanRadarTaskTests: XCTestCase {
     }
 
 }
+

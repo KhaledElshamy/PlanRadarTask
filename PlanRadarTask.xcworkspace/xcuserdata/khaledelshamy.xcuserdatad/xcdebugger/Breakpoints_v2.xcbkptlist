@@ -30,8 +30,8 @@
             filePath = "PlanRadarTask/Modules/Cities/ViewModel/CitiesViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "fetchCityWeatherDetails()"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,6 +49,134 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "navigateToWeatherHistory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA72BE47-CC74-4792-A0B2-9BCF301FC9A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "fetchCityWeather(with:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CA72BE47-CC74-4792-A0B2-9BCF301FC9A3 - e54198d7ee95c6ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlanRadarTaskTests.CityWeatherFectherMock.fetchCityWeather(with: Swift.String, completionHandler: (PlanRadarTask.ResultApi&lt;PlanRadarTask.CityWeatherResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PlanRadarTaskTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khaledelshamy/Desktop/PlanRadarTask/PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "CA72BE47-CC74-4792-A0B2-9BCF301FC9A3 - e54198d7ee95c689"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlanRadarTaskTests.CityWeatherFectherMock.fetchCityWeather(with: Swift.String, completionHandler: (PlanRadarTask.ResultApi&lt;PlanRadarTask.CityWeatherResponse&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PlanRadarTaskTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khaledelshamy/Desktop/PlanRadarTask/PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7000E9AB-3A2D-4DBE-AD51-76E9C1127533"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "setCityName(to:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7000E9AB-3A2D-4DBE-AD51-76E9C1127533 - 552bf034d8f4ed5d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlanRadarTaskTests.CitiesListMockViewModel.setCityName(to: Swift.String) -&gt; ()"
+                  moduleName = "PlanRadarTaskTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khaledelshamy/Desktop/PlanRadarTask/PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "7000E9AB-3A2D-4DBE-AD51-76E9C1127533 - 552bf034d8f4ecf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlanRadarTaskTests.CitiesListMockViewModel.setCityName(to: Swift.String) -&gt; ()"
+                  moduleName = "PlanRadarTaskTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/khaledelshamy/Desktop/PlanRadarTask/PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "564773C1-E69E-4CAC-942A-F8A7F83BD959"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlanRadarTask/Modules/Cities/View/CitiesListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "subscribeOnCitiesEvent()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57F7F172-CAFC-45B6-AFAA-B45C9EBDF13D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlanRadarTaskTests/CitiesListViewControllerTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "fetchCityWeatherDetails()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

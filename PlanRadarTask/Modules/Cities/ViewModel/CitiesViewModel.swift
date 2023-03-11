@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 protocol CitiesViewModelDelegate {
+    var namePublisher: Published<[String]>.Publisher { get }
     func fetchCityWeatherDetails()
     func setCityName(to name:String)
     func deleteCity(at index:Int)
@@ -19,6 +20,8 @@ protocol CitiesViewModelDelegate {
 class CitiesViewModel {
     
     @Published var dataSource: [String] = []
+    var namePublisher: Published<[String]>.Publisher { $dataSource }
+    
     private var cityName: String?
     private var cityWeatherFetcher:CityWeatherFetcherDelegate?
     private var cityWeatherLocalStorage:CityWeatherLocalStorrageDelegate?
@@ -53,6 +56,7 @@ extension CitiesViewModel:CitiesViewModelDelegate {
                 self?.dataSource = self?.cityWeatherLocalStorage?.getCitiesNames() ?? []
                 break
             case .error(let error):
+                print(error.localizedDescription)
                 break
             }
         })
