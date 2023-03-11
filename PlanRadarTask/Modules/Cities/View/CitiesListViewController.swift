@@ -93,6 +93,7 @@ extension CitiesListViewController: UITableViewDataSource {
         let cell:CitiesTableViewCell = tableView.dequeueReusableCell(for: indexPath) 
         cell.selectionStyle = .none
         cell.cityName.text = cities[indexPath.row]
+        cell.delegate = self
         return cell
     }
     
@@ -102,11 +103,18 @@ extension CitiesListViewController: UITableViewDataSource {
     }
 }
 
-extension CitiesListViewController: UITableViewDelegate {
+extension CitiesListViewController: UITableViewDelegate,  CitiesTableViewCellDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let weatherInfo = viewModel?.getWeatherInfo(at: indexPath.item)
         guard let info = weatherInfo else {return}
         let vc = CityDetailsViewController(model: info)
         self.present(vc, animated: true)
+    }
+    
+    func handleTapCityInfo(cell: CitiesTableViewCell) {
+        guard let index = mainView.tableView.indexPath(for: cell)?.row else { return }
+        let weathersHistory = viewModel?.getWeatherInfoHistory(at: index)
+        let vc = WeatherHistoryViewController(weathers: weathersHistory!)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

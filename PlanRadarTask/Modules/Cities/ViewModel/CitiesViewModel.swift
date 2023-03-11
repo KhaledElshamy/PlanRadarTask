@@ -13,6 +13,7 @@ protocol CitiesViewModelDelegate {
     func setCityName(to name:String)
     func deleteCity(at index:Int)
     func getWeatherInfo(at index: Int) -> City
+    func getWeatherInfoHistory(at index: Int) -> [City]
 }
 
 class CitiesViewModel {
@@ -75,5 +76,9 @@ extension CitiesViewModel:CitiesViewModelDelegate {
     
     func getWeatherInfo(at index: Int) -> City {
         return (cityWeatherLocalStorage?.getCityDetails(at: index).first)!
+    }
+    
+    func getWeatherInfoHistory(at index: Int) -> [City] {
+        return cityWeatherLocalStorage?.getCityDetails(at: index) ?? []
     }
 }

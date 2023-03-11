@@ -41,6 +41,10 @@
 		0504867829BC7EA500B97271 /* ConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867729BC7EA500B97271 /* ConfigurationManager.swift */; };
 		0504867A29BC9E1900B97271 /* CityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867929BC9E1900B97271 /* CityDetailsViewController.swift */; };
 		0504867C29BC9E3E00B97271 /* CityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867B29BC9E3E00B97271 /* CityDetailsView.swift */; };
+		0504868029BCD16100B97271 /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867F29BCD16100B97271 /* WeatherHistoryViewController.swift */; };
+		0504868229BCD16C00B97271 /* WeatherHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868129BCD16C00B97271 /* WeatherHistoryView.swift */; };
+		0504868629BCD70E00B97271 /* WeatherHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868429BCD70E00B97271 /* WeatherHistoryTableViewCell.swift */; };
+		0504868729BCD70E00B97271 /* WeatherHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0504868529BCD70E00B97271 /* WeatherHistoryTableViewCell.xib */; };
 		A87160151B4908059582544E /* Pods_PlanRadarTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */; };
 		ED6AF8C394F092584B5C322E /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */; };
 		F7AA6009C8091902E2CE60F6 /* Pods_PlanRadarTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */; };
@@ -105,6 +109,10 @@
 		0504867729BC7EA500B97271 /* ConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationManager.swift; sourceTree = "<group>"; };
 		0504867929BC9E1900B97271 /* CityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsViewController.swift; sourceTree = "<group>"; };
 		0504867B29BC9E3E00B97271 /* CityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsView.swift; sourceTree = "<group>"; };
+		0504867F29BCD16100B97271 /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
+		0504868129BCD16C00B97271 /* WeatherHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryView.swift; sourceTree = "<group>"; };
+		0504868429BCD70E00B97271 /* WeatherHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0504868529BCD70E00B97271 /* WeatherHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.release.xcconfig"; sourceTree = "<group>"; };
 		7BE3599C3CB13CFF40F1F90E /* Pods-PlanRadarTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,6 +261,9 @@
 		0504863F29BB61DA00B97271 /* WeatherHistory */ = {
 			isa = PBXGroup;
 			children = (
+				0504868329BCD6F000B97271 /* WeatherHistoryTableViewCell */,
+				0504867F29BCD16100B97271 /* WeatherHistoryViewController.swift */,
+				0504868129BCD16C00B97271 /* WeatherHistoryView.swift */,
 			);
 			path = WeatherHistory;
 			sourceTree = "<group>";
@@ -349,6 +360,15 @@
 				0504866D29BBFA3E00B97271 /* PlanRadarTask-Bridging-Header.h */,
 			);
 			path = APIClient;
+			sourceTree = "<group>";
+		};
+		0504868329BCD6F000B97271 /* WeatherHistoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0504868429BCD70E00B97271 /* WeatherHistoryTableViewCell.swift */,
+				0504868529BCD70E00B97271 /* WeatherHistoryTableViewCell.xib */,
+			);
+			path = WeatherHistoryTableViewCell;
 			sourceTree = "<group>";
 		};
 		95E307A0A9612BA3F217E251 /* Frameworks */ = {
@@ -484,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0504868729BCD70E00B97271 /* WeatherHistoryTableViewCell.xib in Resources */,
 				0504866629BBDB5800B97271 /* CitiesTableViewCell.xib in Resources */,
 				0504861129BB5E9700B97271 /* LaunchScreen.storyboard in Resources */,
 				0504860E29BB5E9700B97271 /* Assets.xcassets in Resources */,
@@ -623,12 +644,15 @@
 				0504864E29BB72A900B97271 /* CitiesConfigurator.swift in Sources */,
 				0504863C29BB616E00B97271 /* ReusableView.swift in Sources */,
 				0504860229BB5E9500B97271 /* AppDelegate.swift in Sources */,
+				0504868229BCD16C00B97271 /* WeatherHistoryView.swift in Sources */,
 				0504864B29BB711800B97271 /* UIView+Extensions.swift in Sources */,
 				0504865129BB82F800B97271 /* EndPointType.swift in Sources */,
+				0504868629BCD70E00B97271 /* WeatherHistoryTableViewCell.swift in Sources */,
 				0504865529BB84DE00B97271 /* HTTPMethod.swift in Sources */,
 				0504865329BB833800B97271 /* URLs.swift in Sources */,
 				0504867A29BC9E1900B97271 /* CityDetailsViewController.swift in Sources */,
 				0504863829BB5FD600B97271 /* BaseVC.swift in Sources */,
+				0504868029BCD16100B97271 /* WeatherHistoryViewController.swift in Sources */,
 				0504867229BBFDFB00B97271 /* CityWeatherModel.swift in Sources */,
 				0504867C29BC9E3E00B97271 /* CityDetailsView.swift in Sources */,
 				0504865F29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld in Sources */,
