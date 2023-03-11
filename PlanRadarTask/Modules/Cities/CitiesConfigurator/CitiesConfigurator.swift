@@ -10,9 +10,12 @@ import UIKit
 
 class CitiesConfigurator {
     
-    static func citiesListViewController() -> UIViewController {
+    static func citiesListViewController(dataController:DataController) -> UIViewController {
         let viewControlelr = CitiesListViewController()
-        let citiesViewModel:citiesViewModelDelegate = CitiesViewModel()
+        let cityWeatherFetcher:CityWeatherFetcherDelegate = CityWeatherFetcher()
+        let cityWeatherLocalStorage:CityWeatherLocalStorrageDelegate = CityWeatherLocalStorage(dataController: dataController)
+        let citiesViewModel:CitiesViewModelDelegate = CitiesViewModel(cityWeatherLocalStorage: cityWeatherLocalStorage,
+                                                                      cityWeatherFetcher: cityWeatherFetcher)
         viewControlelr.viewModel = citiesViewModel
         return viewControlelr
     }

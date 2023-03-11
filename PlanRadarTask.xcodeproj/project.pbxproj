@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0504860229BB5E9500B97271 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504860129BB5E9500B97271 /* AppDelegate.swift */; };
 		0504860629BB5E9500B97271 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504860529BB5E9500B97271 /* ViewController.swift */; };
 		0504860929BB5E9500B97271 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0504860729BB5E9500B97271 /* Main.storyboard */; };
-		0504860C29BB5E9500B97271 /* PlanRadarTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0504860A29BB5E9500B97271 /* PlanRadarTask.xcdatamodeld */; };
 		0504860E29BB5E9700B97271 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0504860D29BB5E9700B97271 /* Assets.xcassets */; };
 		0504861129BB5E9700B97271 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0504860F29BB5E9700B97271 /* LaunchScreen.storyboard */; };
 		0504861C29BB5E9700B97271 /* PlanRadarTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504861B29BB5E9700B97271 /* PlanRadarTaskTests.swift */; };
@@ -26,6 +25,21 @@
 		0504865129BB82F800B97271 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865029BB82F800B97271 /* EndPointType.swift */; };
 		0504865329BB833800B97271 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865229BB833800B97271 /* URLs.swift */; };
 		0504865529BB84DE00B97271 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865429BB84DE00B97271 /* HTTPMethod.swift */; };
+		0504865729BBC9D400B97271 /* CitiesFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865629BBC9D400B97271 /* CitiesFetcher.swift */; };
+		0504865D29BBD7B400B97271 /* CityDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865929BBD7B400B97271 /* CityDataModel.swift */; };
+		0504865E29BBD7B400B97271 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504865A29BBD7B400B97271 /* WeatherDataModel.swift */; };
+		0504865F29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0504865B29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld */; };
+		0504866129BBDB0F00B97271 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504866029BBDB0F00B97271 /* NibLoadable.swift */; };
+		0504866529BBDB5800B97271 /* CitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504866329BBDB5800B97271 /* CitiesTableViewCell.swift */; };
+		0504866629BBDB5800B97271 /* CitiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0504866429BBDB5800B97271 /* CitiesTableViewCell.xib */; };
+		0504866929BBE38800B97271 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504866829BBE38800B97271 /* DataManager.swift */; };
+		0504866B29BBE93400B97271 /* CityWeatherLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504866A29BBE93400B97271 /* CityWeatherLocalStorage.swift */; };
+		0504867029BBFA3E00B97271 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0504866F29BBFA3E00B97271 /* APIClient.m */; };
+		0504867229BBFDFB00B97271 /* CityWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867129BBFDFB00B97271 /* CityWeatherModel.swift */; };
+		0504867429BC088F00B97271 /* CitiesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504867329BC088F00B97271 /* CitiesNetworkManager.swift */; };
+		A87160151B4908059582544E /* Pods_PlanRadarTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */; };
+		ED6AF8C394F092584B5C322E /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */; };
+		F7AA6009C8091902E2CE60F6 /* Pods_PlanRadarTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A37A45BFE44A50D42BC25E /* Pods-PlanRadarTask-PlanRadarTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask-PlanRadarTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask-PlanRadarTaskUITests/Pods-PlanRadarTask-PlanRadarTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		050485FE29BB5E9500B97271 /* PlanRadarTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanRadarTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0504860129BB5E9500B97271 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0504860529BB5E9500B97271 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0504860829BB5E9500B97271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0504860B29BB5E9500B97271 /* PlanRadarTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlanRadarTask.xcdatamodel; sourceTree = "<group>"; };
 		0504860D29BB5E9700B97271 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0504861029BB5E9700B97271 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0504861229BB5E9700B97271 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +83,28 @@
 		0504865029BB82F800B97271 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		0504865229BB833800B97271 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
 		0504865429BB84DE00B97271 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0504865629BBC9D400B97271 /* CitiesFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFetcher.swift; sourceTree = "<group>"; };
+		0504865929BBD7B400B97271 /* CityDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDataModel.swift; sourceTree = "<group>"; };
+		0504865A29BBD7B400B97271 /* WeatherDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		0504865C29BBD7B400B97271 /* PlanRadarTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlanRadarTask.xcdatamodel; sourceTree = "<group>"; };
+		0504866029BBDB0F00B97271 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		0504866329BBDB5800B97271 /* CitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewCell.swift; sourceTree = "<group>"; };
+		0504866429BBDB5800B97271 /* CitiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitiesTableViewCell.xib; sourceTree = "<group>"; };
+		0504866829BBE38800B97271 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		0504866A29BBE93400B97271 /* CityWeatherLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherLocalStorage.swift; sourceTree = "<group>"; };
+		0504866D29BBFA3E00B97271 /* PlanRadarTask-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlanRadarTask-Bridging-Header.h"; sourceTree = "<group>"; };
+		0504866E29BBFA3E00B97271 /* APIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		0504866F29BBFA3E00B97271 /* APIClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		0504867129BBFDFB00B97271 /* CityWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModel.swift; sourceTree = "<group>"; };
+		0504867329BC088F00B97271 /* CitiesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesNetworkManager.swift; sourceTree = "<group>"; };
+		53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.release.xcconfig"; sourceTree = "<group>"; };
+		7BE3599C3CB13CFF40F1F90E /* Pods-PlanRadarTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.debug.xcconfig"; sourceTree = "<group>"; };
+		80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTask_PlanRadarTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99F4C319CB93F8EFFDE8962F /* Pods-PlanRadarTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadarTaskTests/Pods-PlanRadarTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF00F1E8ED932C73BE7B4EB1 /* Pods-PlanRadarTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTaskTests.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTaskTests/Pods-PlanRadarTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		E7EB5B9BC4C0CDFF456FE623 /* Pods-PlanRadarTask-PlanRadarTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask-PlanRadarTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask-PlanRadarTaskUITests/Pods-PlanRadarTask-PlanRadarTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A87160151B4908059582544E /* Pods_PlanRadarTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7AA6009C8091902E2CE60F6 /* Pods_PlanRadarTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6AF8C394F092584B5C322E /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +142,8 @@
 				0504861A29BB5E9700B97271 /* PlanRadarTaskTests */,
 				0504862429BB5E9700B97271 /* PlanRadarTaskUITests */,
 				050485FF29BB5E9500B97271 /* Products */,
+				CD180C8FFF7117E357C50A2D /* Pods */,
+				95E307A0A9612BA3F217E251 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +160,8 @@
 		0504860029BB5E9500B97271 /* PlanRadarTask */ = {
 			isa = PBXGroup;
 			children = (
+				0504866729BBE37600B97271 /* Storage */,
+				0504865829BBD7B400B97271 /* DataModel */,
 				0504864F29BB815200B97271 /* NetworkLayer */,
 				0504863629BB5FC800B97271 /* Component */,
 				0504863A29BB606F00B97271 /* Utilites */,
@@ -129,7 +172,6 @@
 				0504860D29BB5E9700B97271 /* Assets.xcassets */,
 				0504860F29BB5E9700B97271 /* LaunchScreen.storyboard */,
 				0504861229BB5E9700B97271 /* Info.plist */,
-				0504860A29BB5E9500B97271 /* PlanRadarTask.xcdatamodeld */,
 			);
 			path = PlanRadarTask;
 			sourceTree = "<group>";
@@ -174,6 +216,7 @@
 			children = (
 				0504863B29BB616E00B97271 /* ReusableView.swift */,
 				0504864A29BB711800B97271 /* UIView+Extensions.swift */,
+				0504866029BBDB0F00B97271 /* NibLoadable.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -207,6 +250,7 @@
 		0504864029BB6B0800B97271 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0504866229BBDB4500B97271 /* CitiesTableViewCell */,
 				0504864329BB6B4700B97271 /* CitiesListViewController.swift */,
 				0504864529BB6B6600B97271 /* CitiesView.swift */,
 			);
@@ -224,6 +268,7 @@
 		0504864229BB6B1C00B97271 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0504867129BBFDFB00B97271 /* CityWeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +276,8 @@
 		0504864929BB6E6F00B97271 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0504865629BBC9D400B97271 /* CitiesFetcher.swift */,
+				0504867329BC088F00B97271 /* CitiesNetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -246,11 +293,73 @@
 		0504864F29BB815200B97271 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0504866C29BBF9D800B97271 /* APIClient */,
 				0504865029BB82F800B97271 /* EndPointType.swift */,
 				0504865229BB833800B97271 /* URLs.swift */,
 				0504865429BB84DE00B97271 /* HTTPMethod.swift */,
 			);
 			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		0504865829BBD7B400B97271 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0504865929BBD7B400B97271 /* CityDataModel.swift */,
+				0504865A29BBD7B400B97271 /* WeatherDataModel.swift */,
+				0504865B29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		0504866229BBDB4500B97271 /* CitiesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				0504866329BBDB5800B97271 /* CitiesTableViewCell.swift */,
+				0504866429BBDB5800B97271 /* CitiesTableViewCell.xib */,
+			);
+			path = CitiesTableViewCell;
+			sourceTree = "<group>";
+		};
+		0504866729BBE37600B97271 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				0504866829BBE38800B97271 /* DataManager.swift */,
+				0504866A29BBE93400B97271 /* CityWeatherLocalStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		0504866C29BBF9D800B97271 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				0504866E29BBFA3E00B97271 /* APIClient.h */,
+				0504866F29BBFA3E00B97271 /* APIClient.m */,
+				0504866D29BBFA3E00B97271 /* PlanRadarTask-Bridging-Header.h */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		95E307A0A9612BA3F217E251 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */,
+				8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */,
+				53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD180C8FFF7117E357C50A2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BE3599C3CB13CFF40F1F90E /* Pods-PlanRadarTask.debug.xcconfig */,
+				6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */,
+				E7EB5B9BC4C0CDFF456FE623 /* Pods-PlanRadarTask-PlanRadarTaskUITests.debug.xcconfig */,
+				04A37A45BFE44A50D42BC25E /* Pods-PlanRadarTask-PlanRadarTaskUITests.release.xcconfig */,
+				99F4C319CB93F8EFFDE8962F /* Pods-PlanRadarTaskTests.debug.xcconfig */,
+				CF00F1E8ED932C73BE7B4EB1 /* Pods-PlanRadarTaskTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +369,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0504862B29BB5E9700B97271 /* Build configuration list for PBXNativeTarget "PlanRadarTask" */;
 			buildPhases = (
+				652ABE9D158F5801498474D5 /* [CP] Check Pods Manifest.lock */,
 				050485FA29BB5E9500B97271 /* Sources */,
 				050485FB29BB5E9500B97271 /* Frameworks */,
 				050485FC29BB5E9500B97271 /* Resources */,
+				213E1974B41A628573F6DFC9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -277,6 +388,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0504862E29BB5E9700B97271 /* Build configuration list for PBXNativeTarget "PlanRadarTaskTests" */;
 			buildPhases = (
+				F755C9E9F01FEF210D2997A0 /* [CP] Check Pods Manifest.lock */,
 				0504861329BB5E9700B97271 /* Sources */,
 				0504861429BB5E9700B97271 /* Frameworks */,
 				0504861529BB5E9700B97271 /* Resources */,
@@ -295,9 +407,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0504863129BB5E9700B97271 /* Build configuration list for PBXNativeTarget "PlanRadarTaskUITests" */;
 			buildPhases = (
+				E92E8F3209F94FF7582A13B9 /* [CP] Check Pods Manifest.lock */,
 				0504861D29BB5E9700B97271 /* Sources */,
 				0504861E29BB5E9700B97271 /* Frameworks */,
 				0504861F29BB5E9700B97271 /* Resources */,
+				9AF3182153D218FBAE079865 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,6 +435,7 @@
 				TargetAttributes = {
 					050485FD29BB5E9500B97271 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					0504861629BB5E9700B97271 = {
 						CreatedOnToolsVersion = 14.1;
@@ -333,7 +448,7 @@
 				};
 			};
 			buildConfigurationList = 050485F929BB5E9500B97271 /* Build configuration list for PBXProject "PlanRadarTask" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -357,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0504866629BBDB5800B97271 /* CitiesTableViewCell.xib in Resources */,
 				0504861129BB5E9700B97271 /* LaunchScreen.storyboard in Resources */,
 				0504860E29BB5E9700B97271 /* Assets.xcassets in Resources */,
 				0504860929BB5E9500B97271 /* Main.storyboard in Resources */,
@@ -379,11 +495,118 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		213E1974B41A628573F6DFC9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		652ABE9D158F5801498474D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanRadarTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AF3182153D218FBAE079865 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask-PlanRadarTaskUITests/Pods-PlanRadarTask-PlanRadarTaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask-PlanRadarTaskUITests/Pods-PlanRadarTask-PlanRadarTaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanRadarTask-PlanRadarTaskUITests/Pods-PlanRadarTask-PlanRadarTaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E92E8F3209F94FF7582A13B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanRadarTask-PlanRadarTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F755C9E9F01FEF210D2997A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanRadarTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		050485FA29BB5E9500B97271 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0504865D29BBD7B400B97271 /* CityDataModel.swift in Sources */,
+				0504867029BBFA3E00B97271 /* APIClient.m in Sources */,
+				0504866B29BBE93400B97271 /* CityWeatherLocalStorage.swift in Sources */,
+				0504866129BBDB0F00B97271 /* NibLoadable.swift in Sources */,
 				0504860629BB5E9500B97271 /* ViewController.swift in Sources */,
 				0504864E29BB72A900B97271 /* CitiesConfigurator.swift in Sources */,
 				0504863C29BB616E00B97271 /* ReusableView.swift in Sources */,
@@ -391,9 +614,15 @@
 				0504864B29BB711800B97271 /* UIView+Extensions.swift in Sources */,
 				0504865129BB82F800B97271 /* EndPointType.swift in Sources */,
 				0504865529BB84DE00B97271 /* HTTPMethod.swift in Sources */,
-				0504860C29BB5E9500B97271 /* PlanRadarTask.xcdatamodeld in Sources */,
 				0504865329BB833800B97271 /* URLs.swift in Sources */,
 				0504863829BB5FD600B97271 /* BaseVC.swift in Sources */,
+				0504867229BBFDFB00B97271 /* CityWeatherModel.swift in Sources */,
+				0504865F29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld in Sources */,
+				0504866529BBDB5800B97271 /* CitiesTableViewCell.swift in Sources */,
+				0504867429BC088F00B97271 /* CitiesNetworkManager.swift in Sources */,
+				0504865729BBC9D400B97271 /* CitiesFetcher.swift in Sources */,
+				0504866929BBE38800B97271 /* DataManager.swift in Sources */,
+				0504865E29BBD7B400B97271 /* WeatherDataModel.swift in Sources */,
 				0504864829BB6BAD00B97271 /* CitiesViewModel.swift in Sources */,
 				0504864629BB6B6600B97271 /* CitiesView.swift in Sources */,
 				0504864429BB6B4700B97271 /* CitiesListViewController.swift in Sources */,
@@ -568,9 +797,11 @@
 		};
 		0504862C29BB5E9700B97271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BE3599C3CB13CFF40F1F90E /* Pods-PlanRadarTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HFZN2LR74;
@@ -589,6 +820,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KhaledElshamy.PlanRadarTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PlanRadarTask/NetworkLayer/APIClient/PlanRadarTask-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -596,9 +829,11 @@
 		};
 		0504862D29BB5E9700B97271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HFZN2LR74;
@@ -617,6 +852,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = KhaledElshamy.PlanRadarTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "PlanRadarTask/NetworkLayer/APIClient/PlanRadarTask-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -624,6 +860,7 @@
 		};
 		0504862F29BB5E9700B97271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99F4C319CB93F8EFFDE8962F /* Pods-PlanRadarTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -644,6 +881,7 @@
 		};
 		0504863029BB5E9700B97271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF00F1E8ED932C73BE7B4EB1 /* Pods-PlanRadarTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -664,6 +902,7 @@
 		};
 		0504863229BB5E9700B97271 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7EB5B9BC4C0CDFF456FE623 /* Pods-PlanRadarTask-PlanRadarTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +921,7 @@
 		};
 		0504863329BB5E9700B97271 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A37A45BFE44A50D42BC25E /* Pods-PlanRadarTask-PlanRadarTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -740,12 +980,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0504860A29BB5E9500B97271 /* PlanRadarTask.xcdatamodeld */ = {
+		0504865B29BBD7B400B97271 /* PlanRadarTask.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0504860B29BB5E9500B97271 /* PlanRadarTask.xcdatamodel */,
+				0504865C29BBD7B400B97271 /* PlanRadarTask.xcdatamodel */,
 			);
-			currentVersion = 0504860B29BB5E9500B97271 /* PlanRadarTask.xcdatamodel */;
+			currentVersion = 0504865C29BBD7B400B97271 /* PlanRadarTask.xcdatamodel */;
 			path = PlanRadarTask.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

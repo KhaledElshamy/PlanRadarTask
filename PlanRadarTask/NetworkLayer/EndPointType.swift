@@ -12,7 +12,7 @@ public typealias Parameters = [String:Any]
 
 protocol EndPointType {
     associatedtype ResponseModel: Codable
-    var baseURL: URL? { get }
+    var baseURL: String? { get }
     var path: URLs.Path { get }
     var httpMethod: HTTPMethod? { get }
     var headers: HTTPHeaders? { get }
@@ -20,8 +20,7 @@ protocol EndPointType {
 }
 
 extension EndPointType {
-    var baseURL: URL? {
-        guard let url = URL(string: "https://api.openweathermap.org") else { return nil }
-        return url
+    var baseURL: String? {
+        return "https://api.openweathermap.org"
     }
 }

@@ -7,6 +7,12 @@
 
 import UIKit
 
+
+protocol loadingDelegate {
+    func showLoading()
+    func hideLoading()
+}
+
 class BaseVC <T : UIView > : UIViewController  {
   
     var refreshController : UIRefreshControl?
@@ -33,5 +39,15 @@ class BaseVC <T : UIView > : UIViewController  {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+}
+
+extension BaseVC: loadingDelegate {
+    func showLoading() {
+        
+    }
+    
+    func hideLoading() {
+        
     }
 }
