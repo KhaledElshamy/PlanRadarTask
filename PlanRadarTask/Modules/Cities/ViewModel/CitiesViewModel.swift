@@ -57,6 +57,7 @@ extension CitiesViewModel:CitiesViewModelDelegate {
                 break
             case .error(let error):
                 print(error.localizedDescription)
+                self?.dataSource = self?.cityWeatherLocalStorage?.getCitiesNames() ?? []
                 break
             }
         })

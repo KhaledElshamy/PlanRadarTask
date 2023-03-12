@@ -6,23 +6,72 @@
 //
 
 import XCTest
+import Combine
+import CoreData
 @testable import PlanRadarTask
 
 final class CitiesListViewControllerTest: XCTestCase {
-
+    
+    private var disposables = Set<AnyCancellable>()
+    
     func test_numberOfCities_WithZeroElement() {
         XCTAssertEqual(makeSUT().cities.count, 0)
     }
     
-    func test_NumberOfCities_WithSomeElements(){
+    func test_NumberOfCities_WithElements(){
         let sut = makeSUT()
+        sut.viewModel?.setCityName(to: "london")
         sut.viewModel?.fetchCityWeatherDetails()
+        sut.viewModel?.namePublisher.sink(receiveValue: { cities in
+            sut.cities = cities
+            sut.mainView.tableView.reloadData()
+        }).store(in: &self.disposables)
+        
         XCTAssertEqual(sut.cities.count, 1)
+        
+        sut.viewModel?.setCityName(to: "cairo")
+        sut.viewModel?.fetchCityWeatherDetails()
+        XCTAssertEqual(sut.cities.count, 2)
     }
     
+    func test_numberOfRows_TableView(){
+        let sut = makeSUT()
+        sut.viewModel?.setCityName(to: "london")
+        sut.viewModel?.fetchCityWeatherDetails()
+        sut.viewModel?.namePublisher.sink(receiveValue: { cities in
+            sut.cities = cities
+            sut.mainView.tableView.reloadData()
+        }).store(in: &self.disposables)
+        
+        XCTAssertEqual(sut.mainView.tableView.numberOfRows(inSection: 0), 1)
+        
+        sut.viewModel?.setCityName(to: "cairo")
+        sut.viewModel?.fetchCityWeatherDetails()
+        XCTAssertEqual(sut.mainView.tableView.numberOfRows(inSection: 0), 2)
+    }
+    
+    func test_numberOfRows_tableView_after_deleteElements() {
+        let sut = makeSUT()
+        sut.viewModel?.setCityName(to: "london")
+        sut.viewModel?.fetchCityWeatherDetails()
+        sut.viewModel?.namePublisher.sink(receiveValue: { cities in
+            sut.cities = cities
+            sut.mainView.tableView.reloadData()
+        }).store(in: &self.disposables)
+        
+        XCTAssertEqual(sut.mainView.tableView.numberOfRows(inSection: 0), 1)
+        
+        // delete
+        sut.viewModel?.deleteCity(at: 0)
+        XCTAssertEqual(sut.mainView.tableView.numberOfRows(inSection: 0), 0)
+    }
+    
+    
+    // MARK: - Helpers
     func makeSUT() -> CitiesListViewController {
-        let dataController = DataController(modelName: "PlanRadarTask")
-        let weatherLocalStorageMock = CityWeatherLocalStorageMock(dataController: dataController)
+        let dataController:DataController = TestDataController()
+        let derivedContext = dataController.newDerivedContext()
+        let weatherLocalStorageMock = CityWeatherLocalStorageMock(dataController: dataController,managedObjectContext: derivedContext)
         let cityWeatherFetcherMock = CityWeatherFectherMock()
         let viewModelMock = CitiesListMockViewModel(cityWeatherLocalStorage: weatherLocalStorageMock,
                                                     cityWeatherFetcher: cityWeatherFetcherMock)
@@ -31,7 +80,6 @@ final class CitiesListViewControllerTest: XCTestCase {
         return vc
     }
 }
-
 
 // MARK: - Mocking viewModel
 
@@ -50,13 +98,13 @@ class CitiesListMockViewModel:CitiesViewModelDelegate {
     }
     
     func fetchCityWeatherDetails() {
-        cityWeatherFetcher?.fetchCityWeather(with: cityName ?? "", completionHandler: { [weak self] result in
+        guard let name = cityName else {return}
+        cityWeatherFetcher?.fetchCityWeather(with: name, completionHandler: { [weak self] result in
             switch result {
             case .success(let model):
-                self?.dataSource = ["london"]
-//                let city = self?.getCityModel(model: model)
-//                self?.cityWeatherLocalStorage?.addWeather(for: city!)
-//                self?.dataSource = self?.cityWeatherLocalStorage?.getCitiesNames() ?? []
+                let city = self?.getCityModel(model: model)
+                self?.cityWeatherLocalStorage?.addWeather(for: city!)
+                self?.dataSource = self?.cityWeatherLocalStorage?.getCitiesNames() ?? []
                 break
             case .error(let error):
                 print(error.localizedDescription)
@@ -81,7 +129,7 @@ class CitiesListMockViewModel:CitiesViewModelDelegate {
     }
     
     func deleteCity(at index: Int) {
-        
+        self.dataSource.remove(at: index)
     }
     
     func getWeatherInfo(at index: Int) -> PlanRadarTask.City {
@@ -93,17 +141,27 @@ class CitiesListMockViewModel:CitiesViewModelDelegate {
     }
 }
 
+// MARK: - Mocking Weather featcher
+class CityWeatherFectherMock:CityWeatherFetcherDelegate {
+    
+    func fetchCityWeather(with city: String, completionHandler: @escaping (PlanRadarTask.ResultApi<PlanRadarTask.CityWeatherResponse>) -> Void) {
+        completionHandler(.success(CityWeatherResponse(weather: [Weather(description: "Cloudy", icon: "")],
+                                                       main: Main(temprature: 298, humidity: 36), wind: Wind(speed: 3.09), timezone: 11)))
+    }
+}
 
- // MARK: -  Mocking City Weather Local Storage
+
+// MARK: -  Mocking City Weather Local Storage
 
 class CityWeatherLocalStorageMock: CityWeatherLocalStorrageDelegate {
     
     private var cities: [CityModel] = []
     private var dataController:DataController?
+    let managedObjectContext: NSManagedObjectContext
     
-    init(dataController:DataController){
+    init(dataController:DataController, managedObjectContext: NSManagedObjectContext){
         self.dataController = dataController
-        self.dataController?.load()
+        self.managedObjectContext = managedObjectContext
     }
     
     private func getCityIndex(name: String) -> Int? {
@@ -112,8 +170,7 @@ class CityWeatherLocalStorageMock: CityWeatherLocalStorrageDelegate {
     
     private func loadLocalCities(){
         do {
-            guard let dataController = self.dataController else {return}
-            cities = try dataController.viewContext.fetch(CityModel.fetchRequest())
+            cities = try managedObjectContext.fetch(CityModel.fetchRequest())
         } catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
@@ -134,7 +191,7 @@ class CityWeatherLocalStorageMock: CityWeatherLocalStorrageDelegate {
     
     private func addNewCity(_ model:City){
         if let dataController = self.dataController {
-            let city = CityModel(context: dataController.viewContext)
+            let city = CityModel(context: managedObjectContext)
             city.name = model.name
             let weather = getWeatherInfoModel(for:model)
             weather?.city = city
@@ -145,23 +202,20 @@ class CityWeatherLocalStorageMock: CityWeatherLocalStorrageDelegate {
     }
     
     private func getWeatherInfoModel(for model: City) -> WeatherInfoModel? {
-        if let dataController = self.dataController {
-            let weather = WeatherInfoModel(context: dataController.viewContext)
-            weather.humidity = model.humidity
-            weather.imageURL = model.imageURL
-            weather.wind =  model.windSpeed
-            weather.temperature = model.temperature
-            weather.descriptionInfo = model.description
-            weather.timeTemp = Date()
-            return weather
-        }
-        return nil
+        let weather = WeatherInfoModel(context: managedObjectContext)
+        weather.humidity = model.humidity
+        weather.imageURL = model.imageURL
+        weather.wind =  model.windSpeed
+        weather.temperature = model.temperature
+        weather.descriptionInfo = model.description
+        weather.timeTemp = Date()
+        return weather
     }
     
     func deleteCity(with index: Int) {
         let city = cities[index]
         guard let dataController = self.dataController else {return}
-        dataController.viewContext.delete(city)
+        managedObjectContext.delete(city)
         dataController.saveContext()
     }
     
@@ -181,12 +235,28 @@ class CityWeatherLocalStorageMock: CityWeatherLocalStorrageDelegate {
 }
 
 
-// MARK: - Mocking Weather featcher
 
-class CityWeatherFectherMock:CityWeatherFetcherDelegate {
+// MARK:- TestDataController
+class TestDataController: DataController {
     
-    func fetchCityWeather(with city: String, completionHandler: @escaping (PlanRadarTask.ResultApi<PlanRadarTask.CityWeatherResponse>) -> Void) {
-        completionHandler(.success(CityWeatherResponse(weather: [Weather(description: "Cloudy", icon: "")],
-                                                       main: Main(temprature: 298, humidity: 36), wind: Wind(speed: 3.09), timezone: 11)))
+    override init() {
+        super.init()
+        
+        let persistentStoreDescription = NSPersistentStoreDescription()
+        persistentStoreDescription.type = NSInMemoryStoreType
+        
+        let container = NSPersistentContainer(
+          name: DataController.modelName,
+          managedObjectModel: DataController.model)
+        container.persistentStoreDescriptions = [persistentStoreDescription]
+
+        container.loadPersistentStores { _, error in
+          if let error = error as NSError? {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+          }
+        }
+
+        storeContainer = container
+        
     }
 }

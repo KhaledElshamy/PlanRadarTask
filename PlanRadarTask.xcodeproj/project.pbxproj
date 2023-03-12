@@ -45,7 +45,6 @@
 		0504868629BCD70E00B97271 /* WeatherHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868429BCD70E00B97271 /* WeatherHistoryTableViewCell.swift */; };
 		0504868729BCD70E00B97271 /* WeatherHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0504868529BCD70E00B97271 /* WeatherHistoryTableViewCell.xib */; };
 		0504868929BD01B600B97271 /* CitiesListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868829BD01B600B97271 /* CitiesListViewControllerTest.swift */; };
-		0504868D29BD122C00B97271 /* CitiesViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868C29BD122C00B97271 /* CitiesViewModelMock.swift */; };
 		0504869029BD130200B97271 /* TableViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504868F29BD130200B97271 /* TableViewHelpers.swift */; };
 		A87160151B4908059582544E /* Pods_PlanRadarTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80DF98D8CE5668A01D576025 /* Pods_PlanRadarTask.framework */; };
 		ED6AF8C394F092584B5C322E /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A6300DB5CD1F78667AC13C6 /* Pods_PlanRadarTask_PlanRadarTaskUITests.framework */; };
@@ -115,7 +114,6 @@
 		0504868429BCD70E00B97271 /* WeatherHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		0504868529BCD70E00B97271 /* WeatherHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		0504868829BD01B600B97271 /* CitiesListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListViewControllerTest.swift; sourceTree = "<group>"; };
-		0504868C29BD122C00B97271 /* CitiesViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModelMock.swift; sourceTree = "<group>"; };
 		0504868F29BD130200B97271 /* TableViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelpers.swift; sourceTree = "<group>"; };
 		53939507FA796E14C2195663 /* Pods_PlanRadarTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanRadarTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF70250A2B3BDEAED831406 /* Pods-PlanRadarTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanRadarTask.release.xcconfig"; path = "Target Support Files/Pods-PlanRadarTask/Pods-PlanRadarTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			children = (
 				0504868E29BD12F100B97271 /* helpers */,
 				0504868829BD01B600B97271 /* CitiesListViewControllerTest.swift */,
-				0504868C29BD122C00B97271 /* CitiesViewModelMock.swift */,
 			);
 			path = PlanRadarTaskTests;
 			sourceTree = "<group>";
@@ -689,7 +686,6 @@
 			files = (
 				0504868929BD01B600B97271 /* CitiesListViewControllerTest.swift in Sources */,
 				0504869029BD130200B97271 /* TableViewHelpers.swift in Sources */,
-				0504868D29BD122C00B97271 /* CitiesViewModelMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

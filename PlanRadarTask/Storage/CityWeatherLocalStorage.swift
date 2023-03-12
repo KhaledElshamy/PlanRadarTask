@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import CoreData
 
 protocol CityWeatherLocalStorrageDelegate {
     func getCitiesNames() -> [String]
@@ -18,18 +18,21 @@ protocol CityWeatherLocalStorrageDelegate {
 
 class CityWeatherLocalStorage {
     
+    let managedObjectContext: NSManagedObjectContext
     private var dataController:DataController?
+    
     private var cities: [CityModel] = []
     
-    init(dataController:DataController){
+    init(dataController:DataController, managedObjectContext:NSManagedObjectContext){
         self.dataController = dataController
+        self.managedObjectContext = managedObjectContext
         loadLocalCities()
     }
     
     private func loadLocalCities(){
         do {
             guard let dataController = self.dataController else {return}
-            cities = try dataController.viewContext.fetch(CityModel.fetchRequest())
+            cities = try dataController.mainContext.fetch(CityModel.fetchRequest())
         } catch {
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
@@ -58,7 +61,7 @@ extension CityWeatherLocalStorage: CityWeatherLocalStorrageDelegate {
     
     private func addNewCity(_ model: City) {
         if let dataController = self.dataController {
-            let city = CityModel(context: dataController.viewContext)
+            let city = CityModel(context: managedObjectContext)
             city.name = model.name
             let weather = getWeatherInfoModel(for:model)
             weather?.city = city
@@ -76,24 +79,20 @@ extension CityWeatherLocalStorage: CityWeatherLocalStorrageDelegate {
     }
     
     private func getWeatherInfoModel(for model: City) -> WeatherInfoModel? {
-        if let dataController = self.dataController {
-            let weather = WeatherInfoModel(context: dataController.viewContext)
-            weather.humidity = model.humidity
-            weather.imageURL = model.imageURL
-            weather.wind =  model.windSpeed
-            weather.temperature = model.temperature
-            weather.descriptionInfo = model.description
-            weather.timeTemp = Date()
-            return weather
-        }
-        return nil
+        let weather = WeatherInfoModel(context: managedObjectContext)
+        weather.humidity = model.humidity
+        weather.imageURL = model.imageURL
+        weather.wind =  model.windSpeed
+        weather.temperature = model.temperature
+        weather.descriptionInfo = model.description
+        weather.timeTemp = Date()
+        return weather
     }
     
     func deleteCity(with index: Int) {
         let city = cities[index]
-        guard let dataController = self.dataController else {return}
-        dataController.viewContext.delete(city)
-        dataController.saveContext()
+        managedObjectContext.delete(city)
+        dataController?.saveContext()
     }
     
     func getCityDetails(at index: Int) -> [City] {
